@@ -88,6 +88,7 @@ export interface Config {
   donateTroops(): boolean;
   instantBuild(): boolean;
   isRandomSpawn(): boolean;
+  monkeyMode(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;
   playerTeams(): TeamCountConfig;

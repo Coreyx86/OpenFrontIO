@@ -20,7 +20,7 @@
     "none": "None"
   },
   "main": {
-    "title": "OpenFront (ALPHA)",
+    "title": "OpenFront (ALPHA Monkey Edition)",
     "join_discord": "Discord",
     "login_discord": "Login with Discord",
     "checking_login": "Checking login...",
@@ -28,7 +28,7 @@
     "log_out": "Log out",
     "create_lobby": "Create Lobby",
     "join_lobby": "Join Lobby",
-    "single_player": "Single Player",
+    "single_player": "Monkey Mode",
     "instructions": "Instructions",
     "game_info": "Game info",
     "wiki": "Wiki",
@@ -148,7 +148,8 @@
     "max_timer": "Game length (minutes)",
     "disable_nukes": "Disable Nukes",
     "enables_title": "Enable Settings",
-    "start": "Start Game"
+    "start": "Start Game",
+    "debug_mode": "Debug Mode"
   },
   "token_login_modal": {
     "title": "Logging in...",
@@ -319,7 +320,8 @@
     "remove_player": "Remove {username}",
     "teams_Duos": "Duos (teams of 2)",
     "teams_Trios": "Trios (teams of 3)",
-    "teams_Quads": "Quads (teams of 4)"
+    "teams_Quads": "Quads (teams of 4)",
+    "debug_mode": "Debug Mode"
   },
   "team_colors": {
     "red": "Red",
@@ -691,6 +693,8 @@
     "send_alliance": "Send Alliance",
     "send_troops": "Send Troops",
     "send_gold": "Send Gold",
+    "propose_military_plan": "Propose Plan",
+    "plan": "Plan",
     "emotes": "Emojis"
   },
   "send_troops_modal": {

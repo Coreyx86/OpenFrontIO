@@ -97,7 +97,8 @@
     "random_spawn": "single_modal.random_spawn",
     "infinite_troops": "single_modal.infinite_troops",
     "disable_nukes": "single_modal.disable_nukes",
-    "start": "single_modal.start"
+    "start": "single_modal.start",
+    "debug_mode": "single_model.debug_mode"
   },
   "map": {
     "map": "map.map",

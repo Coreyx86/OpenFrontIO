@@ -128,6 +128,10 @@ export class GameServer {
     if (gameConfig.playerTeams !== undefined) {
       this.gameConfig.playerTeams = gameConfig.playerTeams;
     }
+
+    if(gameConfig.monkeyMode !== undefined) {
+      this.gameConfig.monkeyMode = gameConfig.monkeyMode;
+    }
   }
 
   public joinClient(client: Client) {

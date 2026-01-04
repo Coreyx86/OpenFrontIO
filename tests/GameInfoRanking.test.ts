@@ -30,6 +30,7 @@ describe("Ranking class", () => {
     infiniteGold: false,
     infiniteTroops: false,
     instantBuild: false,
+    monkeyMode: true,
     maxPlayers: 40,
     disabledUnits: [],
     randomSpawn: false,

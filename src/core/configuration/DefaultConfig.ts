@@ -341,6 +341,10 @@ export class DefaultConfig implements Config {
     return this._gameConfig.donateTroops;
   }
 
+  monkeyMode(): boolean {
+    return this._gameConfig.monkeyMode;
+  }
+
   trainSpawnRate(numPlayerFactories: number): number {
     // hyperbolic decay, midpoint at 10 factories
     // expected number of trains = numPlayerFactories  / trainSpawnRate(numPlayerFactories)
@@ -451,7 +455,7 @@ export class DefaultConfig implements Config {
             UnitType.Factory,
           ),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 2 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 2 * 10,
           upgradable: true,
           canBuildTrainStation: true,
         };
@@ -489,7 +493,7 @@ export class DefaultConfig implements Config {
         return {
           cost: this.costWrapper(() => 1_000_000, UnitType.MissileSilo),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 10 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 10 * 10,
           upgradable: true,
         };
       case UnitType.DefensePost:
@@ -499,7 +503,7 @@ export class DefaultConfig implements Config {
             UnitType.DefensePost,
           ),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 5 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 5 * 10,
         };
       case UnitType.SAMLauncher:
         return {
@@ -509,7 +513,7 @@ export class DefaultConfig implements Config {
             UnitType.SAMLauncher,
           ),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 30 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 30 * 10,
           upgradable: true,
         };
       case UnitType.City:
@@ -520,7 +524,7 @@ export class DefaultConfig implements Config {
             UnitType.City,
           ),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 2 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 2 * 10,
           upgradable: true,
           canBuildTrainStation: true,
         };
@@ -533,7 +537,7 @@ export class DefaultConfig implements Config {
             UnitType.Port,
           ),
           territoryBound: true,
-          constructionDuration: this.instantBuild() ? 0 : 2 * 10,
+          constructionDuration: this.instantBuild() || this.monkeyMode() ? 0 : 2 * 10,
           canBuildTrainStation: true,
           experimental: true,
           upgradable: true,

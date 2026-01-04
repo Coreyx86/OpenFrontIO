@@ -51,6 +51,7 @@ export class HostLobbyModal extends LitElement {
   @state() private instantBuild: boolean = false;
   @state() private randomSpawn: boolean = false;
   @state() private compactMap: boolean = false;
+  @state() private monkeyMode: boolean = false;
   @state() private lobbyId = "";
   @state() private copySuccess = false;
   @state() private clients: ClientInfo[] = [];
@@ -395,6 +396,22 @@ export class HostLobbyModal extends LitElement {
                 </label>
 
                 <label
+                  for="debug-mode"
+                  class="option-card ${this.monkeyMode ? "selected" : ""}"
+                >
+                  <div class="checkbox-icon"></div>
+                  <input
+                    type="checkbox"
+                    id="debug-mode"
+                    @change=${this.handleMonkeyModeChange}
+                    .checked=${this.monkeyMode}
+                  />
+                  <div class="option-card-title">
+                    ${translateText("host_modal.debug_mode")}
+                  </div>
+                </label>
+
+                <label
                   for="random-spawn"
                   class="option-card ${this.randomSpawn ? "selected" : ""}"
                 >
@@ -716,6 +733,11 @@ export class HostLobbyModal extends LitElement {
     this.putGameConfig();
   }
 
+  private handleMonkeyModeChange(e: Event){
+    this.monkeyMode = Boolean((e.target as HTMLInputElement).checked);
+    this.putGameConfig();
+  }
+
   private handleMaxTimerValueKeyDown(e: KeyboardEvent) {
     if (["-", "+", "e"].includes(e.key)) {
       e.preventDefault();
@@ -774,6 +796,7 @@ export class HostLobbyModal extends LitElement {
           instantBuild: this.instantBuild,
           randomSpawn: this.randomSpawn,
           gameMode: this.gameMode,
+          monkeyMode: this.monkeyMode,
           disabledUnits: this.disabledUnits,
           playerTeams: this.teamCount,
           ...(this.gameMode === GameMode.Team &&

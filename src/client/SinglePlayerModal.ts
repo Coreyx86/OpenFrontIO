@@ -46,6 +46,7 @@ export class SinglePlayerModal extends LitElement {
   @state() private instantBuild: boolean = false;
   @state() private randomSpawn: boolean = false;
   @state() private useRandomMap: boolean = false;
+  @state() private monkeyMode: boolean = true;
   @state() private gameMode: GameMode = GameMode.FFA;
   @state() private teamCount: TeamCountConfig = 2;
 
@@ -297,6 +298,22 @@ export class SinglePlayerModal extends LitElement {
               </label>
 
               <label
+                for="singleplayer-modal-debug-mode"
+                class="option-card ${this.monkeyMode ? "selected" : ""}"
+              >
+                <div class="checkbox-icon"></div>
+                <input
+                  type="checkbox"
+                  id="singleplayer-modal-debug-mode"
+                  @change=${this.handleMonkeyModeChange}
+                  .checked=${this.monkeyMode}
+                />
+                <div class="option-card-title">
+                  ${translateText("single_modal.debug_mode")}
+                </div>
+              </label>
+
+              <label
                 for="singleplayer-modal-random-spawn"
                 class="option-card ${this.randomSpawn ? "selected" : ""}"
               >
@@ -475,6 +492,10 @@ export class SinglePlayerModal extends LitElement {
     this.compactMap = Boolean((e.target as HTMLInputElement).checked);
   }
 
+  private handleMonkeyModeChange(e: Event) {
+    this.monkeyMode = Boolean((e.target as HTMLInputElement).checked);
+  }
+
   private handleMaxTimerValueKeyDown(e: KeyboardEvent) {
     if (["-", "+", "e"].includes(e.key)) {
       e.preventDefault();
@@ -587,6 +608,7 @@ export class SinglePlayerModal extends LitElement {
               infiniteTroops: this.infiniteTroops,
               instantBuild: this.instantBuild,
               randomSpawn: this.randomSpawn,
+              monkeyMode: this.monkeyMode,
               disabledUnits: this.disabledUnits
                 .map((u) => Object.values(UnitType).find((ut) => ut === u))
                 .filter((ut): ut is UnitType => ut !== undefined),
