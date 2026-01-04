@@ -1,0 +1,16 @@
+OpenFront Modifictions:
+
+	-Propose Military Plans with Allies
+		-Allows players to send requests to their allies on attack plans against a mutual enemy. Gold is split amongst the attackers.
+
+	- Air Invasions
+		-Allow users to airdrop soldiers into territory (probably within a set range)
+			-Vulnerable to SAM fire
+
+	- Weapons:
+		- Multiple Warheads/Submunitions
+			-Allow a user to launch a missile that deliver multiple payloads (either decoy or real) in order to strike multiple locations or to draw SAM fire.
+
+	-Settings:
+		- Prompt before attacking. 
+			-In order to prevent accidentally attacking a neighbor, prompt the user to confirm if they want to start the attack.
